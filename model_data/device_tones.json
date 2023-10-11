@@ -1,0 +1,21 @@
+{
+    "Commander 2 or 3": {
+        "setting_type": "switches",
+        "settings": {
+            "Mechanical Temporal 3": {
+                "switches": {
+                    "SW3": "ON",
+                    "SW4": "ON",
+                    "SW5": "ON"
+                }
+            },
+            "Mechanical Continuous": {
+                "switches": {
+                    "SW3": "OFF",
+                    "SW4": "ON",
+                    "SW5": "ON"
+                }
+            }
+        }
+    }
+}
