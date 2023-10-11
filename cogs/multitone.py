@@ -31,7 +31,7 @@ class Multitone(commands.Cog):
         else:
             try:
                 embed = discord.Embed(
-                    title=f"<:slash:1150933397179486339> rah rah rah",
+                    title=f"<:slash:1150933397179486339> rah rah rah (is git working?)",
                     description=f'Finished loading the settings for **{device}**.',
                     color=discord.Colour.green(),
                 )
