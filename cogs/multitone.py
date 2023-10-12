@@ -31,15 +31,15 @@ class Multitone(commands.Cog):
         else:
             try:
                 embed = discord.Embed(
-                    title=f"<:slash:1150933397179486339> rah rah rah (is git working?)",
-                    description=f'Finished loading the settings for **{device}**.',
+                    title=f"<:slash:1150933397179486339> Multi-tone Device Settings Lookup",
+                    description=f'Displaying all possible tone settings for **{device}**.',
                     color=discord.Colour.green(),
                 )
 
                 with open('model_data/device_tones.json') as json_file:
                     settings = json.load(json_file)
 
-                for setting_type, setting_data in settings["Commander 2 or 3"]["settings"].items():
+                for setting_type, setting_data in settings[device]["settings"].items():
                     switches = setting_data["switches"]
                     switch_statuses = [status for switch, status in switches.items()]
 
