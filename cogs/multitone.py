@@ -53,8 +53,8 @@ class Multitone(commands.Cog):
                     'Commander 2 or 3': ['switches', lambda x: x["switches"]],
                     'Siemens UMMT': ['switches', lambda x: x["switches"]],
                     'Wheelock MT': ['switches', lambda x: x["switches"]],
-                    'System Sensor MA': ['clipped_tabs', lambda x: x["clipped_tabs"]],
-                    'System Sensor MAEH': ['clipped_tabs', lambda x: x["clipped_tabs"]],
+                    'System Sensor MA (ADA)': ['clipped_tabs', lambda x: x["clipped_tabs"]],
+                    'System Sensor MAEH (ADA)': ['clipped_tabs', lambda x: x["clipped_tabs"]],
                     'Gentex GOS or GOT': ['removed_jumpers', lambda x: x["removed_jumpers"]]
                 }
 
