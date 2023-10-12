@@ -54,7 +54,7 @@ class Multitone(commands.Cog):
                         embed.add_field(name=f"» {setting_type}", value=f'```{" ".join(switch_statuses)}```', inline=True)
                 
                 # support for system sensor shit because they like to be special
-                if device in ['System Sensor MA', 'System Sensor MAEH']:
+                if device in ['System Sensor MA (ADA)', 'System Sensor MAEH (ADA)']:
                     for setting_type, setting_data in settings[device]["settings"].items():
                         tabs = setting_data["clipped_tabs"]
 
