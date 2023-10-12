@@ -1,6 +1,8 @@
 {
     "Commander 2 or 3": {
         "setting_type": "switches",
+        "device_note": "SW1 & SW2 are not used for tone control. The following will only apply for SW3, SW4, and SW5 (in that order).",
+        "display_param": "SW3 SW4 SW5",
         "settings": {
             "Mechanical Temporal 3": {
                 "switches": {
@@ -14,6 +16,174 @@
                     "SW3": "OFF",
                     "SW4": "ON",
                     "SW5": "ON"
+                }
+            },
+            "2400Hz Temporal 3": {
+                "switches": {
+                    "SW3": "ON",
+                    "SW4": "OFF",
+                    "SW5": "ON"
+                }
+            },
+            "2400Hz Continuous": {
+                "switches": {
+                    "SW3": "OFF",
+                    "SW4": "OFF",
+                    "SW5": "ON"
+                }
+            },
+            "Chime Temporal 3": {
+                "switches": {
+                    "SW3": "ON",
+                    "SW4": "ON",
+                    "SW5": "OFF"
+                }
+            },
+            "Chime Continuous": {
+                "switches": {
+                    "SW3": "OFF",
+                    "SW4": "ON",
+                    "SW5": "OFF"
+                }
+            },
+            "Whoop": {
+                "switches": {
+                    "SW3": "ON",
+                    "SW4": "OFF",
+                    "SW5": "OFF"
+                }
+            },
+            "Other Whoop": {
+                "switches": {
+                    "SW3": "OFF",
+                    "SW4": "OFF",
+                    "SW5": "OFF"
+                }
+            }
+        }
+    },
+    "Siemens UMMT": {
+        "setting_type": "switches",
+        "device_note": "All 3 switches are used for tone controls on this unit.",
+        "display_param": "SW1 SW2 SW3",
+        "settings": {
+            "Single Stroke Bell": {
+                "switches": {
+                    "SW1": "OFF",
+                    "SW2": "OFF",
+                    "SW3": "OFF"
+                }
+            },
+            "Slow Whoop": {
+                "switches": {
+                    "SW1": "OFF",
+                    "SW2": "OFF",
+                    "SW3": "ON"
+                }
+            },
+            "Siren": {
+                "switches": {
+                    "SW1": "OFF",
+                    "SW2": "ON",
+                    "SW3": "OFF"
+                }
+            },
+            "Vibrating Chime": {
+                "switches": {
+                    "SW1": "OFF",
+                    "SW2": "ON",
+                    "SW3": "ON"
+                }
+            },
+            "Hi-Lo": {
+                "switches": {
+                    "SW1": "ON",
+                    "SW2": "OFF",
+                    "SW3": "OFF"
+                }
+            },
+            "Bell": {
+                "switches": {
+                    "SW1": "ON",
+                    "SW2": "OFF",
+                    "SW3": "ON"
+                }
+            },
+            "Temporal Horn": {
+                "switches": {
+                    "SW1": "ON",
+                    "SW2": "ON",
+                    "SW3": "OFF"
+                }
+            },
+            "Continuous Horn": {
+                "switches": {
+                    "SW1": "ON",
+                    "SW2": "ON",
+                    "SW3": "ON"
+                }
+            }
+        }
+    },
+    "Wheelock MT": {
+        "setting_type": "switches",
+        "device_note": "SW1 is used for volume control (OFF = HI Volume, ON = LOW Volume), SW2, SW3, and SW4 are used for tone control.",
+        "display_param": "SW2 SW3 SW4",
+        "settings": {
+            "Horn": {
+                "switches": {
+                    "SW2": "ON",
+                    "SW3": "ON",
+                    "SW4": "ON"
+                }
+            },
+            "Bell": {
+                "switches": {
+                    "SW2": "ON",
+                    "SW3": "OFF",
+                    "SW4": "ON"
+                }
+            },
+            "March Time Horn": {
+                "switches": {
+                    "SW2": "OFF",
+                    "SW3": "OFF",
+                    "SW4": "ON"
+                }
+            },
+            "Code 3 Horn": {
+                "switches": {
+                    "SW2": "ON",
+                    "SW3": "ON",
+                    "SW4": "OFF"
+                }
+            },
+            "Code 3 Tone": {
+                "switches": {
+                    "SW2": "OFF",
+                    "SW3": "ON",
+                    "SW4": "ON"
+                }
+            },
+            "Slow Whoop": {
+                "switches": {
+                    "SW2": "OFF",
+                    "SW3": "ON",
+                    "SW4": "OFF"
+                }
+            },
+            "Siren": {
+                "switches": {
+                    "SW2": "ON",
+                    "SW3": "OFF",
+                    "SW4": "OFF"
+                }
+            },
+            "Hi-Lo": {
+                "switches": {
+                    "SW2": "OFF",
+                    "SW3": "OFF",
+                    "SW4": "OFF"
                 }
             }
         }

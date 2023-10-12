@@ -16,12 +16,13 @@ class Multitone(commands.Cog):
     async def multitone(
         self,
         ctx,
-        device: Option(str, 'The type of device you want to return settings for.', required=True, choices=['Commander 2 or 3', 'some other one'])
+        device: Option(str, 'The type of device you want to return settings for.', required=True, choices=['Commander 2 or 3', 'Siemens UMMT', 'Wheelock MT'])
     ):
         """Show all of the settings for a multi-tone fire alarm device."""
         requestTime = datetime.datetime.now()
         print(f'[{requestTime}] [Multitone Settings] Requested by {ctx.author} (ID: {ctx.author.id})')
 
+        # filter out those stupid blacklisted users
         with open('blacklist', 'r') as file:
             GLOBAL_BLACKLIST = [int(line.strip()) for line in file if line.strip()]
             
@@ -36,14 +37,19 @@ class Multitone(commands.Cog):
                     color=discord.Colour.green(),
                 )
 
-                with open('model_data/device_tones.json') as json_file:
-                    settings = json.load(json_file)
+                # open and load the json file to get the data we need
+                settings = json.load(open('model_data/device_tones.json'))
+                
+                # add our 2 weird fields
+                embed.add_field(name="📝 Device-Specific Information", value=f'```{settings[device]["device_note"]}```', inline=False)
+                embed.add_field(name="🚥 Displayed Layout", value=f'```{settings[device]["display_param"]}```', inline=False)
 
+                # support only 1 type of devices (uses switches)
                 for setting_type, setting_data in settings[device]["settings"].items():
                     switches = setting_data["switches"]
                     switch_statuses = [status for switch, status in switches.items()]
 
-                    embed.add_field(name=f"📚 {setting_type}", value=f'```{" ".join(switch_statuses)}```', inline=True)
+                    embed.add_field(name=f"» {setting_type}", value=f'```{" ".join(switch_statuses)}```', inline=True)
 
                 now = datetime.datetime.now()
                 rtime = now.strftime("%B %d, %Y, %H:%M")
