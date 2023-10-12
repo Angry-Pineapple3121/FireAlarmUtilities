@@ -44,28 +44,26 @@ class Multitone(commands.Cog):
                 embed.add_field(name="📝 Device-Specific Information", value=f'```{settings[device]["device_note"]}```', inline=False)
                 embed.add_field(name="🚥 Displayed Layout", value=f'```{settings[device]["display_param"]}```', inline=False)
 
-                # support for the 3 devices that use switches
-                if device in ['Commander 2 or 3', 'Siemens UMMT', 'Wheelock MT']:
-                    # loop through the settings and add them to the embed
-                    for setting_type, setting_data in settings[device]["settings"].items():
-                        switches = setting_data["switches"]
-                        switch_statuses = [status for switch, status in switches.items()]
+                # change our addition of settings into a function to make it easier
+                def add_setting_to_embed(embed, device, setting_type, value):
+                    embed.add_field(name=f"» {setting_type}", value=f'```{value}```', inline=True)
 
-                        embed.add_field(name=f"» {setting_type}", value=f'```{" ".join(switch_statuses)}```', inline=True)
-                
-                # support for system sensor shit because they like to be special
-                if device in ['System Sensor MA', 'System Sensor MAEH']:
-                    for setting_type, setting_data in settings[device]["settings"].items():
-                        tabs = setting_data["clipped_tabs"]
+                # clean up the rat's nest with some nicer code (thanks chatgpt)
+                devices = {
+                    'Commander 2 or 3': ['switches', lambda x: x["switches"]],
+                    'Siemens UMMT': ['switches', lambda x: x["switches"]],
+                    'Wheelock MT': ['switches', lambda x: x["switches"]],
+                    'System Sensor MA': ['clipped_tabs', lambda x: x["clipped_tabs"]],
+                    'System Sensor MAEH': ['clipped_tabs', lambda x: x["clipped_tabs"]],
+                    'Gentex GOS or GOT': ['removed_jumpers', lambda x: x["removed_jumpers"]]
+                }
 
-                        embed.add_field(name=f"» {setting_type}", value=f'```{(tabs)}```', inline=True)
-
-                # gentex also likes to be different so they get the same treatment
-                if device in ['Gentex GOS or GOT']:
-                    for setting_type, setting_data in settings[device]["settings"].items():
-                        jumpers = setting_data["removed_jumpers"]
-
-                        embed.add_field(name=f"» {setting_type}", value=f'```{(jumpers)}```', inline=True)
+                # leaning tower of if-statements :)
+                for device in devices:
+                    if device in settings:
+                        for setting_type, setting_data in settings[device]["settings"].items():
+                            setting_value = devices[device][1](setting_data[devices[device][0]])
+                            add_setting_to_embed(embed, device, setting_type, setting_value)
 
                 now = datetime.datetime.now()
                 rtime = now.strftime("%B %d, %Y, %H:%M")
