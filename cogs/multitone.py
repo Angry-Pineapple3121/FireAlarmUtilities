@@ -16,7 +16,7 @@ class Multitone(commands.Cog):
     async def multitone(
         self,
         ctx,
-        device: Option(str, 'The type of device you want to return settings for.', required=True, choices=['Commander 2 or 3', 'Siemens UMMT', 'Wheelock MT'])
+        device: Option(str, 'The type of device you want to return settings for.', required=True, choices=['Commander 2 or 3', 'Siemens UMMT', 'Wheelock MT', 'System Sensor MA (ADA)', 'System Sensor MAEH (ADA)', 'Gentex GOS or GOT'])
     ):
         """Show all of the settings for a multi-tone fire alarm device."""
         requestTime = datetime.datetime.now()
@@ -39,17 +39,33 @@ class Multitone(commands.Cog):
 
                 # open and load the json file to get the data we need
                 settings = json.load(open('model_data/device_tones.json'))
-                
-                # add our 2 weird fields
+
+                # theoretically this should never get passed invalid data but fuck it ship it
                 embed.add_field(name="📝 Device-Specific Information", value=f'```{settings[device]["device_note"]}```', inline=False)
                 embed.add_field(name="🚥 Displayed Layout", value=f'```{settings[device]["display_param"]}```', inline=False)
 
-                # support only 1 type of devices (uses switches)
-                for setting_type, setting_data in settings[device]["settings"].items():
-                    switches = setting_data["switches"]
-                    switch_statuses = [status for switch, status in switches.items()]
+                # support for the 3 devices that use switches
+                if device in ['Commander 2 or 3', 'Siemens UMMT', 'Wheelock MT']:
+                    # loop through the settings and add them to the embed
+                    for setting_type, setting_data in settings[device]["settings"].items():
+                        switches = setting_data["switches"]
+                        switch_statuses = [status for switch, status in switches.items()]
 
-                    embed.add_field(name=f"» {setting_type}", value=f'```{" ".join(switch_statuses)}```', inline=True)
+                        embed.add_field(name=f"» {setting_type}", value=f'```{" ".join(switch_statuses)}```', inline=True)
+                
+                # support for system sensor shit because they like to be special
+                if device in ['System Sensor MA', 'System Sensor MAEH']:
+                    for setting_type, setting_data in settings[device]["settings"].items():
+                        tabs = setting_data["clipped_tabs"]
+
+                        embed.add_field(name=f"» {setting_type}", value=f'```{(tabs)}```', inline=True)
+
+                # gentex also likes to be different so they get the same treatment
+                if device in ['Gentex GOS or GOT']:
+                    for setting_type, setting_data in settings[device]["settings"].items():
+                        jumpers = setting_data["removed_jumpers"]
+
+                        embed.add_field(name=f"» {setting_type}", value=f'```{(jumpers)}```', inline=True)
 
                 now = datetime.datetime.now()
                 rtime = now.strftime("%B %d, %Y, %H:%M")

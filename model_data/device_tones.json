@@ -187,5 +187,98 @@
                 }
             }
         }
+    },
+    "System Sensor MA (ADA)": {
+        "setting_type": "tabs",
+        "device_note": "Clip-on tabs are used for tone control in this unit.",
+        "display_param": "The tabs which should have clips applied.",
+        "settings": {
+            "Slow Whoop": {
+                "clipped_tabs": "ABC"
+            },
+            "800Hz Continuous": {
+                "clipped_tabs": "BC"
+            },
+            "800/1000Hz Alternating": {
+                "clipped_tabs": "AC"
+            },
+            "2400Hz Interrupted": {
+                "clipped_tabs": "AB"
+            },
+            "2400Hz Continuous": {
+                "clipped_tabs": "C"
+            },
+            "1200Hz Interrupted": {
+                "clipped_tabs": "B"
+            },
+            "Swept Frequency": {
+                "clipped_tabs": "A"
+            },
+            "Fast Warble": {
+                "clipped_tabs": "None"
+            }
+        }
+    },
+    "System Sensor MAEH (ADA)": {
+        "setting_type": "tabs",
+        "device_note": "Clip-on tabs are used for tone control in this unit.",
+        "display_param": "The tabs which should have clips applied.",
+        "settings": {
+            "Fast Whoop": {
+                "clipped_tabs": "ABC"
+            },
+            "800Hz Continuous": {
+                "clipped_tabs": "BC"
+            },
+            "800/1000Hz Fast Dual": {
+                "clipped_tabs": "AC"
+            },
+            "Chirp": {
+                "clipped_tabs": "AB"
+            },
+            "2400Hz Continuous": {
+                "clipped_tabs": "C"
+            },
+            "Bell": {
+                "clipped_tabs": "B"
+            },
+            "Laser": {
+                "clipped_tabs": "A"
+            },
+            "Electro Mechanical": {
+                "clipped_tabs": "None"
+            }
+        }
+    },
+    "Gentex GOS or GOT": {
+        "setting_type": "jumpers",
+        "device_note": "Jumpers are used for tone control in this unit. You need to remove jumpers to enable a tone.",
+        "display_param": "The jumpers which should be removed.",
+        "settings": {
+            "800Hz Continuous": {
+                "removed_jumpers": "None"
+            },
+            "800Hz Temporal": {
+                "removed_jumpers": "J1"
+            },
+            "2400Hz Continuous": {
+                "removed_jumpers": "J2"
+            },
+            "2400Hz Temporal": {
+                "removed_jumpers": "J1 J2"
+            },
+            "Chime (700Hz)": {
+                "removed_jumpers": "J3"
+            },
+            "Slow Whoop (600 - 1200Hz)": {
+                "removed_jumpers": "J1 J3"
+            },
+            "800/1000Hz Alternating": {
+                "removed_jumpers": "J2 J3"
+            },
+            "Siren (600 - 1200Hz)": {
+                "removed_jumpers": "J1 J2 J3"
+            }
+        }
     }
 }
