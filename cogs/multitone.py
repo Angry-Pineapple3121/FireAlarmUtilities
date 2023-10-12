@@ -16,7 +16,7 @@ class Multitone(commands.Cog):
     async def multitone(
         self,
         ctx,
-        device: Option(str, 'The type of device you want to return settings for.', required=True, choices=['Commander 2 or 3', 'Siemens UMMT', 'Wheelock MT', 'System Sensor MA (ADA)', 'System Sensor MAEH (ADA)', 'Gentex GOS or GOT'])
+        device: Option(str, 'The type of device you want to return settings for.', required=True, choices=['Commander 2 or 3', 'Siemens UMMT', 'Wheelock MT', 'System Sensor MA (ADA)', 'System Sensor MAEH (ADA)', 'Gentex GOS or GOT', 'Collectors Controls DUSMC'])
     ):
         """Show all of the settings for a multi-tone fire alarm device."""
         requestTime = datetime.datetime.now()
@@ -45,7 +45,7 @@ class Multitone(commands.Cog):
                 embed.add_field(name="🚥 Displayed Layout", value=f'```{settings[device]["display_param"]}```', inline=False)
 
                 # support for the 3 devices that use switches
-                if device in ['Commander 2 or 3', 'Siemens UMMT', 'Wheelock MT']:
+                if device in ['Commander 2 or 3', 'Siemens UMMT', 'Wheelock MT', 'Collectors Controls DUSMC']:
                     # loop through the settings and add them to the embed
                     for setting_type, setting_data in settings[device]["settings"].items():
                         switches = setting_data["switches"]

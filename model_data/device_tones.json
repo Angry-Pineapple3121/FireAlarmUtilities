@@ -188,6 +188,184 @@
             }
         }
     },
+    "Collectors Controls DUSMC": {
+        "setting_type": "switches",
+        "device_note": "All 5 switches in the switch bank are used for coding control in this unit.",
+        "display_param": "SW1 SW2 SW3 SW4 SW5",
+        "settings": {
+            "Continuous": {
+                "switches": {
+                    "SW1": "OFF",
+                    "SW2": "OFF",
+                    "SW3": "OFF",
+                    "SW4": "OFF",
+                    "SW5": "OFF"
+                }
+            },
+            "Temporal 3": {
+                "switches": {
+                    "SW1": "ON",
+                    "SW2": "OFF",
+                    "SW3": "OFF",
+                    "SW4": "OFF",
+                    "SW5": "OFF"
+                }
+            },
+            "120 BPM March Time": {
+                "switches": {
+                    "SW1": "OFF",
+                    "SW2": "ON",
+                    "SW3": "OFF",
+                    "SW4": "OFF",
+                    "SW5": "OFF"
+                }
+            },
+            "90 BPM March Time": {
+                "switches": {
+                    "SW1": "ON",
+                    "SW2": "ON",
+                    "SW3": "OFF",
+                    "SW4": "OFF",
+                    "SW5": "OFF"
+                }
+            },
+            "60 BPM March Time": {
+                "switches": {
+                    "SW1": "OFF",
+                    "SW2": "OFF",
+                    "SW3": "ON",
+                    "SW4": "OFF",
+                    "SW5": "OFF"
+                }
+            },
+            "30 BPM March Time": {
+                "switches": {
+                    "SW1": "ON",
+                    "SW2": "OFF",
+                    "SW3": "ON",
+                    "SW4": "OFF",
+                    "SW5": "OFF"
+                }
+            },
+            "20 BPM March Time": {
+                "switches": {
+                    "SW1": "OFF",
+                    "SW2": "ON",
+                    "SW3": "ON",
+                    "SW4": "OFF",
+                    "SW5": "OFF"
+                }
+            },
+            "California Code": {
+                "switches": {
+                    "SW1": "ON",
+                    "SW2": "ON",
+                    "SW3": "ON",
+                    "SW4": "OFF",
+                    "SW5": "OFF"
+                }
+            },
+            "Pulsed California Code": {
+                "switches": {
+                    "SW1": "OFF",
+                    "SW2": "OFF",
+                    "SW3": "OFF",
+                    "SW4": "ON",
+                    "SW5": "OFF"
+                }
+            },
+            "4-4 Code": {
+                "switches": {
+                    "SW1": "ON",
+                    "SW2": "OFF",
+                    "SW3": "OFF",
+                    "SW4": "ON",
+                    "SW5": "OFF"
+                }
+            },
+            "4-4-4-4 Code": {
+                "switches": {
+                    "SW1": "OFF",
+                    "SW2": "ON",
+                    "SW3": "OFF",
+                    "SW4": "ON",
+                    "SW5": "OFF"
+                }
+            },
+            "Temporal 3 (Simplex 4002)": {
+                "switches": {
+                    "SW1": "ON",
+                    "SW2": "ON",
+                    "SW3": "OFF",
+                    "SW4": "ON",
+                    "SW5": "OFF"
+                }
+            },
+            "Temporal 4": {
+                "switches": {
+                    "SW1": "OFF",
+                    "SW2": "OFF",
+                    "SW3": "ON",
+                    "SW4": "ON",
+                    "SW5": "OFF"
+                }
+            },
+            "Simplex SmartSync": {
+                "switches": {
+                    "SW1": "OFF",
+                    "SW2": "OFF",
+                    "SW3": "OFF",
+                    "SW4": "OFF",
+                    "SW5": "ON"
+                }
+            },
+            "Wheelock Sync": {
+                "switches": {
+                    "SW1": "ON",
+                    "SW2": "OFF",
+                    "SW3": "OFF",
+                    "SW4": "OFF",
+                    "SW5": "ON"
+                }
+            },
+            "System Sensor Sync": {
+                "switches": {
+                    "SW1": "OFF",
+                    "SW2": "ON",
+                    "SW3": "OFF",
+                    "SW4": "OFF",
+                    "SW5": "ON"
+                }
+            },
+            "Gentex Sync": {
+                "switches": {
+                    "SW1": "ON",
+                    "SW2": "ON",
+                    "SW3": "OFF",
+                    "SW4": "OFF",
+                    "SW5": "ON"
+                }
+            },
+            "Siemens Sync": {
+                "switches": {
+                    "SW1": "OFF",
+                    "SW2": "OFF",
+                    "SW3": "ON",
+                    "SW4": "OFF",
+                    "SW5": "ON"
+                }
+            },
+            "EST Sync": {
+                "switches": {
+                    "SW1": "ON",
+                    "SW2": "OFF",
+                    "SW3": "ON",
+                    "SW4": "OFF",
+                    "SW5": "ON"
+                }
+            }
+        }
+    },
     "System Sensor MA (ADA)": {
         "setting_type": "tabs",
         "device_note": "Clip-on tabs are used for tone control in this unit.",
