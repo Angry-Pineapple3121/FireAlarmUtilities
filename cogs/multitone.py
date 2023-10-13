@@ -47,10 +47,16 @@ class Multitone(commands.Cog):
                 # support for the 3 devices that use switches
                 if device in ['Commander 2 or 3', 'Siemens UMMT', 'Wheelock MT', 'Collectors Controls DUSMC']:
                     # loop through the settings and add them to the embed
+                    # Define a dictionary to map statuses to Unicode characters
+                    status_mapping = {
+                        "ON": "⍐",
+                        "OFF": "⍗"
+                    }
+                    
                     for setting_type, setting_data in settings[device]["settings"].items():
                         switches = setting_data["switches"]
-                        switch_statuses = [status for switch, status in switches.items()]
-
+                        switch_statuses = [status_mapping[status] for switch, status in switches.items()]
+                    
                         embed.add_field(name=f"» {setting_type}", value=f'```{" ".join(switch_statuses)}```', inline=True)
                 
                 # support for system sensor shit because they like to be special
