@@ -78,27 +78,27 @@ class SimplexMNC(commands.Cog):
                 
                 # horrible code coming!!!
                 if model in devicetype['truenac.txt']:
-                    embed.add_field(name=f"<:simplex:1092988498736320513> Device Type", value=f'```TrueNAC```', inline=True)
+                    embed.add_field(name=f"<:simplex:1092988498736320513> Device Type", value=f'**```TrueNAC```**', inline=True)
                     embed.add_field(name=f":information_source: Categorization Information", value=f'```Requires any Simplex panel which can support addressable notification (IDNAC is backwards-compatible). Can also be used with a TrueAlert Addressable Controller.```', inline=False)
                     await ctx.respond(embed=embed)
                 elif model in devicetype['es.txt']:
-                    embed.add_field(name=f"<:simplex:1092988498736320513> Device Type", value=f'```ES Addressable```', inline=True)
+                    embed.add_field(name=f"<:simplex:1092988498736320513> Device Type", value=f'**```ES Addressable```**', inline=True)
                     embed.add_field(name=f":information_source: Categorization Information", value=f'```Requires a modern Simplex panel with IDNAC that can support TrueAlertES addressable devices.```', inline=False)
                     await ctx.respond(embed=embed)
                 elif model in devicetype['freerun.txt']:
-                    embed.add_field(name=f"<:simplex:1092988498736320513> Device Type", value=f'```Free Run```', inline=True)
+                    embed.add_field(name=f"<:simplex:1092988498736320513> Device Type", value=f'**```Free Run```**', inline=True)
                     embed.add_field(name=f":information_source: Categorization Information", value=f'```Doesn\'t require any special panels or tools to run, only 24 volts DC.```', inline=False)
                     await ctx.respond(embed=embed)
                 elif model in devicetype['selectable.txt']:
-                    embed.add_field(name=f"<:simplex:1092988498736320513> Device Type", value=f'```Selectable```', inline=True)
+                    embed.add_field(name=f"<:simplex:1092988498736320513> Device Type", value=f'**```Selectable```**', inline=True)
                     embed.add_field(name=f":information_source: Categorization Information", value=f'```The user can choose to use the device in free run mode or in SmartSync mode using a switch located on the front of the unit.```', inline=False)
                     await ctx.respond(embed=embed)
                 elif model in devicetype['smartsync.txt']:
-                    embed.add_field(name=f"<:simplex:1092988498736320513> Device Type", value=f'```SmartSync```', inline=True)
+                    embed.add_field(name=f"<:simplex:1092988498736320513> Device Type", value=f'**```SmartSync```**', inline=True)
                     embed.add_field(name=f":information_source: Categorization Information", value=f'```Requires a SmartSync compatible controller to operate. Examples of this are Simplex panels with QALERT NAC setting, a SmartSync module, 4009 IDNet NAC Extender, or Collectors Controls DUSMC.```', inline=False)                
                     await ctx.respond(embed=embed)
                 elif model in devicetype['syncable.txt']:
-                    embed.add_field(name=f"<:simplex:1092988498736320513> Device Type", value=f'```Syncable```', inline=True)
+                    embed.add_field(name=f"<:simplex:1092988498736320513> Device Type", value=f'**```Syncable```**', inline=True)
                     embed.add_field(name=f":information_source: Categorization Information", value=f'```Horn will operate when power is applied, but the strobe will flash only when power is removed.```', inline=False)
                     await ctx.respond(embed=embed)
                 

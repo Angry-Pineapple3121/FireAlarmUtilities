@@ -57,21 +57,21 @@ class Multitone(commands.Cog):
                         switches = setting_data["switches"]
                         switch_statuses = [status_mapping[status] for switch, status in switches.items()]
                     
-                        embed.add_field(name=f"» {setting_type}", value=f'```{" ".join(switch_statuses)}```', inline=True)
+                        embed.add_field(name=f"» {setting_type}", value=f'**```{" ".join(switch_statuses)}```**', inline=True)
                 
                 # support for system sensor shit because they like to be special
                 if device in ['System Sensor MA (ADA)', 'System Sensor MAEH (ADA)']:
                     for setting_type, setting_data in settings[device]["settings"].items():
                         tabs = setting_data["clipped_tabs"]
 
-                        embed.add_field(name=f"» {setting_type}", value=f'```{(tabs)}```', inline=True)
+                        embed.add_field(name=f"» {setting_type}", value=f'**```{(tabs)}```**', inline=True)
 
                 # gentex also likes to be different so they get the same treatment
                 if device in ['Gentex GOS or GOT']:
                     for setting_type, setting_data in settings[device]["settings"].items():
                         jumpers = setting_data["removed_jumpers"]
 
-                        embed.add_field(name=f"» {setting_type}", value=f'```{(jumpers)}```', inline=True)
+                        embed.add_field(name=f"» {setting_type}", value=f'**```{(jumpers)}```**', inline=True)
 
                 now = datetime.datetime.now()
                 rtime = now.strftime("%B %d, %Y, %H:%M")
