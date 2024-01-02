@@ -99,7 +99,7 @@ class Addressable(commands.Cog):
 
                     # Draw the switch number
                     number = str(i + 1)
-                    number_width, number_height = draw.textsize(number, font=font)
+                    number_width = draw.textlength(number, font=font)
                     number_x = switch_left + (switch_width - number_width) // 2
                     number_y = switch_bottom + 5  # Padding below the switch
                     draw.text((number_x, number_y), number, fill='black', font=font)
