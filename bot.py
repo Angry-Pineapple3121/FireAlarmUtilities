@@ -74,7 +74,10 @@ async def inviteme(ctx):
 
 @bot.command(name="botinfo", description="Get bot information and statistics.")
 async def botinfo(ctx):
-    if ctx.author.id != 304054669372817419:
+    with open('administrators', 'r') as file:
+        GLOBAL_ADMINISTRATORS = [int(line.strip()) for line in file if line.strip()]
+        
+    if ctx.author.id not in GLOBAL_ADMINISTRATORS:
         await ctx.respond('<:warn:1105998033335898162> You do not have permission to use this command.', ephemeral=True)
         print(f'[{datetime.datetime.now()}] [No Permissions] {ctx.author} (ID: {ctx.author.id}) attempted to use a command they do not have permission to use.')
     else:
@@ -98,7 +101,7 @@ async def botinfo(ctx):
         
         embed = discord.Embed(
             title="<:simplex:1092988498736320513> Fire Alarm Utilities Bot Info",
-            description=f"**Service Information**\n <:greendot:1129631441286873138> Guilds: **{amount}** \n <:greendot:1129631441286873138> Total Channels: **{bot_channels}** \n <:greendot:1129631441286873138> Serving **{members}** members \n\n **Bot Guild Information**\n {guild_info}\n **System Information**\n <:greendot:1129631441286873138> CPU Usage: **{psutil.cpu_percent()}%** \n <:greendot:1129631441286873138> Memory Usage: **{round(process.memory_info().rss / 1024 / 1024, 2)} MB** \n <:greendot:1129631441286873138> Uptime: **{rounded_timedelta}**\n <:greendot:1129631441286873138> Bot Firmware: **{BOT_VERSION}**",
+            description=f"**Service Information**\n <:greendot:1129631441286873138> Guilds: **{amount}** \n <:greendot:1129631441286873138> Total Channels: **{bot_channels}** \n <:greendot:1129631441286873138> Serving **{members}** members \n\n **Bot Guild Information**\n {guild_info}\n **System Information**\n <:greendot:1129631441286873138> CPU Usage: **{psutil.cpu_percent()}%** \n <:greendot:1129631441286873138> Memory Usage: **{round(process.memory_info().rss / 1024 / 1024, 2)} MB** \n <:greendot:1129631441286873138> Uptime: **{rounded_timedelta}**\n <:greendot:1129631441286873138> Bot Firmware: **{BOT_VERSION}**\n <:greendot:1129631441286873138> DynamiX Firmware: **0.1-ALPHA**",
             color=discord.Color.green()
         )
 
@@ -110,7 +113,10 @@ async def botinfo(ctx):
 
 @bot.command(name="blacklist", description="Blacklist a user from using the bot.")
 async def blacklist(ctx, user: discord.User):
-    if ctx.author.id != 304054669372817419:
+    with open('administrators', 'r') as file:
+        GLOBAL_ADMINISTRATORS = [int(line.strip()) for line in file if line.strip()]
+        
+    if ctx.author.id not in GLOBAL_ADMINISTRATORS:
         await ctx.respond('<:warn:1105998033335898162> You do not have permission to use this command.', ephemeral=True)
         print(f'[{datetime.datetime.now()}] [No Permissions] {ctx.author} (ID: {ctx.author.id}) attempted to use a command they do not have permission to use.')
     else:
@@ -120,7 +126,10 @@ async def blacklist(ctx, user: discord.User):
 
 @bot.command(name="unblacklist", description="Remove a user's blacklist status.")
 async def unblacklist(ctx, user: discord.User):
-    if ctx.author.id != 304054669372817419:
+    with open('administrators', 'r') as file:
+        GLOBAL_ADMINISTRATORS = [int(line.strip()) for line in file if line.strip()]
+        
+    if ctx.author.id not in GLOBAL_ADMINISTRATORS:
         await ctx.respond('<:warn:1105998033335898162> You do not have permission to use this command.', ephemeral=True)
         print(f'[{datetime.datetime.now()}] [No Permissions] {ctx.author} (ID: {ctx.author.id}) attempted to use a command they do not have permission to use.')
     else:
