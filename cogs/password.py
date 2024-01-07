@@ -185,7 +185,7 @@ class Password(commands.Cog):
             if ctx.author.id not in ENROLLED_USERS:
                 embed = discord.Embed(
                     title=f"",
-                    description=f'<:warn:1105998033335898162> You\'re not enrolled in the Experimental Features program yet! To enroll, run the `/enroll` command.',
+                    description=f'<:warn:1105998033335898162> You\'re not enrolled in the Experimental Features program yet! To enroll, run the </enroll:1193417904780230807> command.',
                     color=discord.Colour.yellow(),
                 )
 
