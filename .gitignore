@@ -3,6 +3,7 @@ blacklist
 switches.png
 ARIAL.TTF
 administrators
+enrolled
 *.pyc
 *.cpython-311.pyc
 __pycache__/
