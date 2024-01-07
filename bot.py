@@ -15,7 +15,8 @@ cogs_list = [
     'addressable',
     'datasheetreference',
     'aucpreview',
-    'multitone'
+    'multitone',
+    'password'
 ]
 
 bot = discord.Bot()
@@ -122,7 +123,14 @@ async def blacklist(ctx, user: discord.User):
     else:
         with open('blacklist', 'a') as f:
             f.write(f'\n{user.id}')
-        await ctx.respond(f'<:check:1081988275851513919> {user} (ID: {user.id}) has been blacklisted from using the bot.')
+
+        embed = discord.Embed(
+                title=f"",
+                description=f'<:check:1081988275851513919> **{user}** (ID: **{user.id}**) has been blacklisted from using the bot.',
+                color=discord.Colour.green(),
+            )
+        
+        await ctx.respond(embed=embed)
 
 @bot.command(name="unblacklist", description="Remove a user's blacklist status.")
 async def unblacklist(ctx, user: discord.User):
@@ -143,8 +151,38 @@ async def unblacklist(ctx, user: discord.User):
                 for line in lines:
                     if line.strip("\n") != str(user.id):
                         f.write(line)
-            await ctx.respond(f'<:check:1081988275851513919> {user} (ID: {user.id}) has been removed from the blacklist.')
+            embed = discord.Embed(
+                title=f"",
+                description=f'<:check:1081988275851513919> **{user}** (ID: **{user.id}**) has been removed from the blacklist',
+                color=discord.Colour.green(),
+            )
+        
+            await ctx.respond(embed=embed)
         else:
-            await ctx.respond(f'<:warn:1105998033335898162> {user} (ID: {user.id}) is not blacklisted.')
+            embed = discord.Embed(
+                title=f"",
+                description=f'<:X_:1152069831638650890> **{user}** (ID: **{user.id}**) is not blacklisted.',
+                color=discord.Colour.red(),
+            )
+        
+            await ctx.respond(embed=embed)
+
+
+@bot.command(name="enroll", description="Enroll into experimental features coming to the bot. NOTE! Features might be removed at any time!")
+async def enroll(ctx):
+    with open('enrolled', 'a+') as f:
+        f.seek(0)
+        if str(ctx.author.id) in f.read():
+            await ctx.respond('<:warn:1105998033335898162> You are already enrolled into experimental features!', ephemeral=True)
+        else:
+            f.write(f'\n{ctx.author.id}')
+
+            embed = discord.Embed(
+                    title=f"",
+                    description=f'<:check:1081988275851513919> You have successfully enrolled into access to experimental features!\n\n <:warn:1105998033335898162> **Experimental features are not guaranteed to work, and may be removed at any time.**',
+                    color=discord.Colour.green(),
+                )
+
+            await ctx.respond(embed=embed)
 
 bot.run(AUTH_TOKEN)
