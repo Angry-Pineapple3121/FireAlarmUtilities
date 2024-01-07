@@ -169,7 +169,7 @@ class Password(commands.Cog):
     ):
         """Decodes an encrypted Level 1 or Level 2 password for use with specific Notifier panels."""
         requestTime = datetime.datetime.now()
-        print(f'[{requestTime}] [Simplex MNC] Requested by {ctx.author} (ID: {ctx.author.id}) with encoded password {password}')
+        print(f'[{requestTime}] [Notifier Password Decode] Requested by {ctx.author} (ID: {ctx.author.id}) with encoded password {password}')
 
         with open('blacklist', 'r') as file:
             GLOBAL_BLACKLIST = [int(line.strip()) for line in file if line.strip()]
@@ -177,7 +177,7 @@ class Password(commands.Cog):
         if ctx.author.id in GLOBAL_BLACKLIST:
             await ctx.respond('<:X_:1152069831638650890> Your account is currently **blacklisted** from all features in Fire Alarm Utilities.')
             print(f'[{datetime.datetime.now()}] [Blacklisted] {ctx.author} (ID: {ctx.author.id}) attempted to use a command they are blacklisted from using.')
-            
+
         else:
             with open ('enrolled', 'r') as file:
                 ENROLLED_USERS = [int(line.strip()) for line in file if line.strip()]
