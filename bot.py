@@ -16,7 +16,8 @@ cogs_list = [
     'datasheetreference',
     'aucpreview',
     'multitone',
-    'password'
+    'password',
+    'datecode'
 ]
 
 bot = discord.Bot()

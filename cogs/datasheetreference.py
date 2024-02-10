@@ -1322,7 +1322,7 @@ class SimplexDS(commands.Cog):
                 if model in modelData:
                     link = modelData[model]
                     embed.add_field(name=f"Device Data Sheet", value=f'<:bluedot:1139723552799604787> Your device\'s data sheet can be found at {link}.', inline=False)
-                    embed.add_field(name=f":warning: Warning", value=f'<:bluedot:1139723552799604787> All Simplex data sheets have been offline since the beginning of October due to a cyberattack.', inline=False)
+                    #embed.add_field(name=f":warning: Warning", value=f'<:bluedot:1139723552799604787> All Simplex data sheets have been offline since the beginning of October due to a cyberattack.', inline=False)
                     await ctx.respond(embed=embed)
                 else:
                     await ctx.respond('Sorry, but I couldn\'t find a data sheet for that model number. Simplex\'s data doesn\'t include anything past **January 2017**.', ephemeral=True)
