@@ -82,7 +82,7 @@ class AucPreview(commands.Cog):
                     embed.add_field(name=f"📚 Auction Name", value=f'```{item["name"]}```', inline=False)
                     embed.add_field(name=f"💵 Price", value=f'**```{item["price"]}```**', inline=True)
                     embed.add_field(name=f"📦 Shipping", value=f'```{item["shipping"]}```', inline=True)
-                    embed.add_field(name=f"🪝 Seller", value=f'```{item["seller_name"]}```', inline=True)
+                    #embed.add_field(name=f"🪝 Seller", value=f'```{item["seller_name"]}```', inline=True)
     
                     embed.set_image(url=item["photos"][-1])
                         
