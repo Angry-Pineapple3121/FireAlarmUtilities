@@ -110,6 +110,7 @@ class DateCode(commands.Cog):
                     else:
                         date_code = re.match(code_regex, datecode).group()
 
+                        # split the rev number (last letter) from the date code
                         rev = date_code[-1]
                         date_code = date_code[:-1]
 
