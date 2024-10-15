@@ -6,4 +6,4 @@ administrators
 enrolled
 *.pyc
 *.cpython-311.pyc
-__pycache__/
+cogs/__pycache__/*
